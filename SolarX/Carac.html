@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características</title>
+     <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
+        <link rel="stylesheet" href="./CSS/app.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!--Inicio de barra de nevegacion-->
+<body>
+    <div class="offer-alert">
+        <div class="offer-alert__container container">
+          <span>🔥😍 ¡Reserva nuestro producto ahora!</span> <a href="./reservaciones.html" class="offer-alert__btn">RESERVA</a>
+        </div>
+      </div>
+<header class="hero container-fluid border-bottom">
+    <nav class="hero-nav container px-4 px-lg-0 mx-auto">
+        <ul class="nav w-100 list-unstyled align-items-center p-0">
+          <li class="hero-nav__item">
+            <img class="hero-nav__logo" src="./imgs/Logo_Compu.svg">
+          </li>
+          <li id="hero-menu" class="flex-grow-1 hero__nav-list hero__nav-list--mobile-menu ft-menu">
+            <ul class="hero__menu-content nav flex-column flex-lg-row ft-menu__slider animated list-unstyled p-2 p-lg-0">
+              <li class="flex-grow-1">
+                <ul class="nav nav--lg-side list-unstyled align-items-center p-0">
+                  <li class="hero-nav__item">
+                    <a href="./MisionyVision.html" class="hero-nav__link">Misión y Visión</a>
+                  </li>
+                  <li class="hero-nav__item">
+                    <a href="./reservaciones.html" class="hero-nav__link">Reserva</a>
+                  </li>
+                  <li class="hero-nav__item">
+                    <a href="./Sobre Nosotros.html" class="hero-nav__link">Sobre Nosotros</a>
+                  </li>
+                  <li class="hero-nav__item">
+                    <a href="./Carac.html" class="hero-nav__link">Características</a>
+                  </li>
+                  <li class="hero-nav__item">
+                    <a href="./index.html" class="hero-nav__link">Producto</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <button onclick="document.querySelector('#hero-menu').classList.toggle('ft-menu--js-show')"
+              class="ft-menu__close-btn animated">
+              <svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+                  clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+          </li>
+          <li class="d-lg-none flex-grow-1 d-flex flex-row-reverse hero-nav__item">
+            <button onclick="document.querySelector('#hero-menu').classList.toggle('ft-menu--js-show')"
+              class="text-center px-2">
+              <i class="fas fa-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <!--Final de barra de navegacion, inicio de caracteristicas-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <br>
+                <h2 id="Caracteristicas" class="hero__title mb-3">Características</h2>
+                    <p>Power Bank con paneles solares incluidos, con capacidad increíble de recarga solar para nunca quedarte sin batería, sin importar donde te encuentres.</p>
+                        <li id="hero__paragraph mb-5">
+                            Capacidad de: 7000Mha
+                        </li>
+                        <li id="hero__paragraph mb-5">
+                            Conector de carga de la batería: USB C
+                        </li>
+                        <li id="hero__paragraph mb-5">
+                            Conector para cargar dispositivo: USB A
+                        </li>
+                        <li id="hero__paragraph mb-5">
+                            Compatible con iPhone 7 y Posteriores, Galaxy S8 y posteriores
+                        </li>
+                        <li id="hero__paragraph mb-5">
+                            Potencia de entrada: 5V 1A
+                        </li>
+                        <li id="hero__paragraph mb-5">
+                            Potencia de salida 5V 1A
+                        </li>
+                    <br>
+                    <br>
+            <a href="./index.html"><button type="button" class="btn btn-primary">Regresar</button></a>
+            <a href="./reservaciones.html"><button type="button" class="btn btn-primary">Reservar</button></a>
+            <br>
+        </div>
+            <div class="col">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                <img class="PowerBankSolar" src="./imgs/Powerbank abierta-11408x4934-PhotoRoom.png-PhotoRoom.png" alt="Bateria" width="600px" height="300px">
+             </div>
+        </div>
+    </div>
+</header>
+<hr>
+<hr>
+<hr>
+      
+<div class="block-44 py-5">
+  <div class="container">
+    <div class="row px-0 mx-0 justify-content-center align-items-center">
+      <div class="block-44__logo-container">
+        <img class="block-44__logo" src="./imgs/Logo_Compu.svg">
+      </div>
+      <ul class="block-44__list list-unstyled justify-content-center mb-0">
+        <li class="block-44__li-1">
+          <a href="#" class="block-44__link">Affiliate</a>
+        </li>
+        <li class="block-44__li-1">
+          <a href="#" class="block-44__link">Entreprise</a>
+        </li>
+        <li class="block-44__li-1">
+          <a href="#" class="block-44__link">Products</a>
+        </li>
+        <li class="block-44__li-1">
+          <a href="#" class="block-44__link">Account</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr class="block-44__divider">
+  <div class="container">
+    <div class="row flex-column flex-md-row px-2 justify-content-center">
+      <div class="flex-grow-1">
+        <ul class="block-44__extra-links d-flex list-unstyled p-0">
+          <li class="mx-2">
+            <a href="#" class="block-44__link m-0">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="mx-2">
+            <a href="https://instagram.com/powersolar.x?igshid=ZDc4ODBmNjlmNQ==" class="block-44__link m-0">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li class="mx-2">
+            <a href="#" class="block-44__link m-0">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="block-41__copyrights">&copy; 2020 YourBrandName. All Rights Reserved.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =================================== -->
+
+<script src="./JS/app.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+  crossorigin="anonymous"></script>
+  
+</body>
+</html>

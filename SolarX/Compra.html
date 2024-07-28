@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff3131, #ff914d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .left-side {
+            grid-column: 1 / 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .right-side {
+            grid-column: 2 / 3;
+            text-align: center;
+            position: relative; /* Agregar posición relativa */
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input:hover {
+            border: 3px solid #ff6a00;
+        }
+
+        .form-group input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f0f0f0, #fff);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comprar-button {
+            background: linear-gradient(135deg, #ff6a00, #ffcc00);
+            border: none;
+            border-radius: 10px;
+            padding: 15px 60px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 350px;
+        }
+
+        .comprar-button {
+            margin-top: 25px;
+            width: 250px;
+        }
+
+        .alert {
+            position: absolute;
+            background-color: white;
+            color: #F24738;
+            padding: 5px 10px;
+            border: 2px solid #F24738;
+            border-radius: 10px;
+            top: auto;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: none;
+            text-align: center;
+        }
+
+        /* Estilo para la alerta de confirmación a la derecha */
+        .confirmation-alert {
+            position: absolute;
+            background-color: #fff;
+            color: #ff6a00;
+            padding: 20px;
+            border: 2px solid #ff6a00;
+            border-radius: 10px;
+            top: 50%; /* Centrar verticalmente */
+            right: 20px; /* Posición a la derecha */
+            transform: translateY(-50%); /* Centrar verticalmente */
+            z-index: 2;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>¡Estás a un solo paso de adquirir tu power X!</h1>
+        </div>
+        <div class="right-side">
+            <h1>Compra de Producto</h1>
+            <hr id="productLine">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo">
+            </div>
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" maxlength="9" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Domicilio:</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección de domicilio">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="producto">Nombre de Producto:</label>
+                    <input type="text" id="producto" name="producto" placeholder="Ingrese el nombre del producto">
+                </div>
+                <div class="form-group">
+                    <label for="unidades">Unidades a Cancelar:</label>
+                    <input type="number" id="unidades" name="unidades" placeholder="Ingrese la cantidad de unidades">
+                </div>
+            </div>
+            <h1>Datos de Pago</h1>
+            <hr id="paymentLine">
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="tipoTarjeta">Tipo de Tarjeta:</label>
+                    <input type="text" id="tipoTarjeta" name="tipoTarjeta" placeholder="Ingrese el tipo de tarjeta">
+                </div>
+                <div class="form-group">
+                    <label for="numeroTarjeta">No. de Tarjeta:</label>
+                    <input type="text" id="numeroTarjeta" maxlength="24" name="numeroTarjeta" placeholder="Ingrese el número de tarjeta">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="fechaVencimiento">Fecha de Vencimiento:</label>
+                    <input type="text" id="fechaVencimiento" name="fechaVencimiento" placeholder="Ingrese la fecha de vencimiento">
+                </div>
+                <div class="form-group">
+                    <label for="totalPagar">Total a Pagar:</label>
+                    <input type="text" id="totalPagar" name="totalPagar" placeholder="Ingrese el total a pagar">
+                </div>
+            </div>
+            <button class="comprar-button">Comprar</button>
+            <div id="alertMessage" class="alert">¡Ups! Campo incompleto</div>
+            <div id="confirmationMessage" class="confirmation-alert"></div>
+            <button id="editButton" style="display: none;">Editar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const comprarButton = document.querySelector('.comprar-button');
+            const alertMessage = document.getElementById('alertMessage');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const editButton = document.getElementById('editButton');
+
+            function checkEmptyFields() {
+                const nombre = document.getElementById('nombre').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const direccion = document.getElementById('direccion').value.trim();
+                const producto = document.getElementById('producto').value.trim();
+                const unidades = document.getElementById('unidades').value.trim();
+                const tipoTarjeta = document.getElementById('tipoTarjeta').value.trim();
+                const numeroTarjeta = document.getElementById('numeroTarjeta').value.trim();
+                const fechaVencimiento = document.getElementById('fechaVencimiento').value.trim();
+                const totalPagar = document.getElementById('totalPagar').value.trim();
+                const fieldsEmpty = (
+                    nombre === '' ||
+                    telefono === '' ||
+                    direccion === '' ||
+                    producto === '' ||
+                    unidades === '' ||
+                    tipoTarjeta === '' ||
+                    numeroTarjeta === '' ||
+                    fechaVencimiento === '' ||
+                    totalPagar === ''
+                );
+                return { fieldsEmpty, nombre };
+            }
+
+            function formatFechaVencimiento(input) {
+                const value = input.value.replace(/\D/g, '').substring(0, 4);
+                const formattedValue = value.replace(/(\d{2})(\d{0,2})/, '$1/$2');
+                input.value = formattedValue;
+            }
+
+            function formatNumeroTarjeta(input) {
+                const value = input.value.replace(/\D/g, '').substring(0, 16);
+                let formattedValue = '';
+                for (let i = 0; i < value.length; i += 4) {
+                    formattedValue += value.slice(i, i + 4) + '-';
+                }
+                formattedValue = formattedValue.slice(0, -1);
+                input.value = formattedValue;
+            }
+
+            function formatTelefono(input) {
+                const value = input.value.replace(/\D/g, '').substring(0, 9);
+                const formattedValue = value.replace(/(\d{4})(\d{0,4})/, '$1-$2');
+                input.value = formattedValue;
+            }
+
+            comprarButton.addEventListener('click', function (e) {
+                const { fieldsEmpty, nombre } = checkEmptyFields();
+                if (fieldsEmpty) {
+                    alertMessage.style.display = 'block';
+                    confirmationMessage.style.display = 'none';
+                    e.preventDefault();
+                } else {
+                    alertMessage.style.display = 'none';
+
+                    confirmationMessage.innerHTML = `
+                        <p>Hemos registrado tu compra, nos contactaremos vía correo electrónico contigo pronto, para confirmar la fecha y hora de tu entrega.</p>
+                        <p>¡Gracias por tu compra, ${nombre}!</p>
+                    `;
+                    confirmationMessage.style.display = 'block';
+
+                    const formGroups = document.querySelectorAll('.form-group');
+                    formGroups.forEach((formGroup) => {
+                        formGroup.style.display = 'none';
+                    });
+
+                    document.getElementById('productLine').style.display = 'none';
+                    document.getElementById('paymentLine').style.display = 'none';
+
+                    comprarButton.style.display = 'none';
+                    editButton.style.display = 'block';
+                }
+            });
+
+            editButton.addEventListener('click', function () {
+                const formGroups = document.querySelectorAll('.form-group');
+                formGroups.forEach((formGroup) => {
+                    formGroup.style.display = 'block';
+                });
+
+                document.getElementById('productLine').style.display = 'block';
+                document.getElementById('paymentLine').style.display = 'block';
+
+                confirmationMessage.style.display = 'none';
+                comprarButton.style.display = 'block';
+                editButton.style.display = 'none';
+            });
+
+            const fechaVencimientoInput = document.getElementById('fechaVencimiento');
+            fechaVencimientoInput.addEventListener('input', function () {
+                formatFechaVencimiento(fechaVencimientoInput);
+            });
+
+            const numeroTarjetaInput = document.getElementById('numeroTarjeta');
+            numeroTarjetaInput.addEventListener('input', function () {
+                formatNumeroTarjeta(numeroTarjetaInput);
+            });
+
+            const telefonoInput = document.getElementById('telefono');
+            telefonoInput.addEventListener('input', function () {
+                formatTelefono(telefonoInput);
+            });
+
+            numeroTarjetaInput.addEventListener('input', function () {
+                const value = numeroTarjetaInput.value.replace(/\D/g, '');
+                if (value.length < 13 || value.length > 16) {
+                    numeroTarjetaInput.setCustomValidity('El número de tarjeta debe tener entre 13 y 16 dígitos.');
+                } else {
+                    numeroTarjetaInput.setCustomValidity('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
